@@ -37,11 +37,10 @@
     <div class="header">
       <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed" id="nav-menu">
         {% if has_password and not current_user.is_authenticated %}
-          <a class="pure-menu-heading" href="https://changedetection.io" rel="noopener">
-            <strong>Change</strong>Detection.io</a>
+            <strong>Change</strong>Detection
         {% else %}
           <a class="pure-menu-heading" href="{{url_for('index')}}">
-            <strong>Change</strong>Detection.io</a>
+            <strong>Change</strong>Detection</a>
         {% endif %}
         {% if current_diff_url %}
           <a class="current-diff-url" href="{{ current_diff_url }}">
