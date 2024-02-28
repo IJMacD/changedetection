@@ -531,11 +531,15 @@ class ChangeDetectionStore:
             return None
 
         if watch.get('proxy') and watch.get('proxy') in list(self.proxy_list.keys()):
+            if self.proxy_list[watch.get('proxy')]['label'] == "None":
+                return None
             return watch.get('proxy')
 
         # not valid (including None), try the system one
         else:
             system_proxy_id = self.data['settings']['requests'].get('proxy')
+            if self.proxy_list[system_proxy_id]['label'] == "None":
+                return None
             # Is not None and exists
             if self.proxy_list.get(system_proxy_id):
                 return system_proxy_id
