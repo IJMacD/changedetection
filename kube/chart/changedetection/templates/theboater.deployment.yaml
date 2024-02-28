@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: '{{ .Release.Name }}-theboater-proxy'
+  labels:
+    app.kubernetes.io/name: '{{ .Chart.Name }}'
+    app.kubernetes.io/instance: '{{ .Release.Name }}'
+    app.kubernetes.io/version: '{{ .Chart.Version }}'
+    app.kubernetes.io/component: theboater-proxy
+spec:
+  replicas: {{ .Values.theboaterProxy.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/component: theboater-proxy
+      app.kubernetes.io/instance: '{{ .Release.Name }}'
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/component: theboater-proxy
+        app.kubernetes.io/instance: '{{ .Release.Name }}'
+    spec:
+      containers:
+        - name: theboater-proxy
+          image: '{{ .Values.theboaterProxy.repository.image }}{{ if ne .Values.appVersion "" }}:{{ .Values.appVersion }}{{ end }}'
+          ports:
+            - name: theboater
+              containerPort: 3000
