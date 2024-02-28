@@ -103,6 +103,10 @@ services:
 #            - /dev/shm:/dev/shm
 #        restart: unless-stopped
 
+  theboater-proxy:
+    build: theboater-proxy
+    image: theboater-proxy
+    hostname: theboater-proxy
 volumes:
   datastore-volume:
 

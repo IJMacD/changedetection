@@ -1,0 +1,6 @@
+{
+    "name": "theboater-proxy",
+    "dependencies": {
+        "express": "^4.18.2"
+    }
+}
