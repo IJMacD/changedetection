@@ -25,3 +25,10 @@ spec:
           ports:
             - name: theboater
               containerPort: 3000
+          resources:
+            requests:
+              memory: 25Mi
+              cpu: 5m
+            limits:
+              memory: 50Mi
+              cpu: 10m
