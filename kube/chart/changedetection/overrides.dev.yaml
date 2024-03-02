@@ -1,0 +1,12 @@
+hostname: changedetection.localhost
+web:
+  repository:
+    image: k3d-registry.localhost:5111/ijmacd/changedetection
+  tls:
+    enabled: true
+  local:
+    enabled: true
+theboaterProxy:
+  replicaCount: 1
+  repository:
+    image: k3d-registry.localhost:5111/ijmacd/theboater-proxy

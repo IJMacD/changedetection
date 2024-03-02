@@ -4,6 +4,8 @@ const https = require("https");
 const app = express();
 
 app.get("/", async function (req, res) {
+    console.log(new Date().toISOString() + " " + req.url);
+
     try {
         const nonce = await getNonce();
         const apiData = await getAPIData(nonce);
@@ -22,7 +24,7 @@ app.listen(port);
 
 console.log(`Listening on port ${port}`);
 
-async function getNonce () {
+async function getNonce() {
     return new Promise((resolve, reject) => {
         const pageURL = "https://theboater.hk/sail/";
 
@@ -46,7 +48,7 @@ async function getNonce () {
     });
 }
 
-async function getAPIData (nonce) {
+async function getAPIData(nonce) {
     return new Promise((resolve, reject) => {
         const dataURL = "https://theboater.hk/wp-admin/admin-ajax.php";
 
