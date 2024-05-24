@@ -33,11 +33,10 @@ spec:
               containerPort: 5000
           resources:
             requests:
-              memory: 250Mi
-              cpu: 15m
+              memory: 254Mi
+              cpu: 10m
             limits:
-              memory: 500Mi
-              cpu: 30m
+              memory: 254Mi
       volumes:
         - name: web-data
           {{- if  .Values.web.persistence.enabled }}

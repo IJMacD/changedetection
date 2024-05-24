@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: '{{ .Release.Name }}-theboater-proxy'
+  name: "{{ .Release.Name }}-theboater-proxy"
   labels:
-    app.kubernetes.io/name: '{{ .Chart.Name }}'
-    app.kubernetes.io/instance: '{{ .Release.Name }}'
-    app.kubernetes.io/version: '{{ .Chart.Version }}'
+    app.kubernetes.io/name: "{{ .Chart.Name }}"
+    app.kubernetes.io/instance: "{{ .Release.Name }}"
+    app.kubernetes.io/version: "{{ .Chart.Version }}"
     app.kubernetes.io/component: theboater-proxy
 spec:
   replicas: {{ .Values.theboaterProxy.replicaCount }}
   selector:
     matchLabels:
       app.kubernetes.io/component: theboater-proxy
-      app.kubernetes.io/instance: '{{ .Release.Name }}'
+      app.kubernetes.io/instance: "{{ .Release.Name }}"
   template:
     metadata:
       labels:
         app.kubernetes.io/component: theboater-proxy
-        app.kubernetes.io/instance: '{{ .Release.Name }}'
+        app.kubernetes.io/instance: "{{ .Release.Name }}"
     spec:
       containers:
         - name: theboater-proxy
@@ -27,8 +27,7 @@ spec:
               containerPort: 3000
           resources:
             requests:
-              memory: 25Mi
-              cpu: 5m
-            limits:
-              memory: 50Mi
+              memory: 100Mi
               cpu: 10m
+            limits:
+              memory: 100Mi
