@@ -32,11 +32,7 @@ spec:
             - name: web
               containerPort: 5000
           resources:
-            requests:
-              memory: 254Mi
-              cpu: 10m
-            limits:
-              memory: 254Mi
+{{ toYaml .Values.web.resources | indent 12 }}
       volumes:
         - name: web-data
           {{- if  .Values.web.persistence.enabled }}

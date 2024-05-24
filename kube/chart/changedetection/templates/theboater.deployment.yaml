@@ -26,8 +26,4 @@ spec:
             - name: theboater
               containerPort: 3000
           resources:
-            requests:
-              memory: 100Mi
-              cpu: 10m
-            limits:
-              memory: 100Mi
+{{ toYaml .Values.theboaterProxy.resources | indent 12 }}

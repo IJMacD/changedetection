@@ -12,7 +12,19 @@ web:
     enabled: false
   local:
     enabled: false
+  resources:
+    requests:
+      memory: 276Mi
+      cpu: 10m
+    limits:
+      memory: 276Mi
 theboaterProxy:
   replicaCount: 1
   repository:
     image: docker.io/ijmacd/theboater-proxy
+  resources:
+    requests:
+      memory: 33Mi
+      cpu: 1m
+    limits:
+      memory: 33Mi
