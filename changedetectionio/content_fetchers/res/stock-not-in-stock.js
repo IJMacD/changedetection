@@ -17,8 +17,9 @@ function isItemInStock() {
         'as soon as stock is available',
         'ausverkauft', // sold out
         'available for back order',
-        'back-order or out of stock',
+        'awaiting stock',
         'back in stock soon',
+        'back-order or out of stock',
         'backordered',
         'benachrichtigt mich', // notify me
         'brak na stanie',
@@ -57,16 +58,20 @@ function isItemInStock() {
         'sold-out',
         'temporarily out of stock',
         'temporarily unavailable',
+        'there were no search results for',
+        'this item is currently unavailable',
         'tickets unavailable',
         'tijdelijk uitverkocht',
         'unavailable tickets',
         'vorbestellung ist bald möglich',
+        'we couldn\'t find any products that match',
         'we do not currently have an estimate of when this product will be back in stock.',
         'we don\'t know when or if this item will be back in stock.',
+        'we were not able to find a match',
         'zur zeit nicht an lager',
         '品切れ',
-        '已售完',
         '已售',
+        '已售完',
         '품절'
     ];
 
