@@ -8,6 +8,14 @@ web:
     enabled: true
     storage_class: "local-path"
     capacity: "8Gi"
+  ingress:
+    enabled: false
+  gateway:
+    enabled: true
+    parentRef:
+      name: gateway
+      namespace: default
+      sectionName: https
   tls:
     enabled: false
   local:

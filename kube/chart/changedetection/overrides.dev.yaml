@@ -2,6 +2,10 @@ hostname: changedetection.localhost
 web:
   repository:
     image: k3d-registry.localhost:5111/ijmacd/changedetection
+  ingress:
+    enabled: true
+  gateway:
+    enabled: false
   tls:
     enabled: true
   local:
